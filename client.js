@@ -12,6 +12,10 @@ client.connect(port, host, () => {
     console.log(`Connected to Server: ${host}:${port}`)
 })
 
+client.on("end", () => {
+    console.log("Servcer finished sending data")
+})
+
 // Receive the data which server sends
 client.on("data", (data) => {
     console.log(`Receieved: ${data}`)
